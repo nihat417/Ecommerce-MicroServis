@@ -1,0 +1,17 @@
+﻿.vs/
+.vscode/
+*.vsix
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+bin/
+obj/
+
+node_modules/
+
+.DS_Store
+
+.docker/
+docker-compose.override.yml
