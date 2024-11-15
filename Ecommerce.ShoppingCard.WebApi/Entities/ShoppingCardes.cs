@@ -1,8 +1,8 @@
 ﻿namespace Ecommerce.ShoppingCard.WebApi.Entities
 {
-    public sealed class ShoppingCard
+    public sealed class ShoppingCardes
     {
-        public ShoppingCard()
+        public ShoppingCardes()
         {
             Id = Guid.NewGuid();
         }
