@@ -1,20 +1,13 @@
-using Ecommerce.ShoppingCard.WebApi.Context;
-using Microsoft.EntityFrameworkCore;
+using Ecommerce.ShoppingCard.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    options.UseNpgsql(builder.Configuration.GetConnectionString("PostreSql"));
-});
+var startup = new Startup(builder.Configuration);
+
+startup.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 
-using(var scopped = app.Services.CreateScope())
-{
-    var  srv = scopped.ServiceProvider;
-    var context = srv.GetRequiredService<ApplicationDbContext>();
-    context.Database.Migrate();
-}
+startup.Configure(app, app.Environment);
 
 app.Run();

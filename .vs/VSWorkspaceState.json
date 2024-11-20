@@ -4,6 +4,6 @@
     "\\Ecommerce.Product.WebApi",
     "\\Ecommerce.ShoppingCard.WebApi"
   ],
-  "SelectedNode": "\\Ecommerce.ShoppingCard.WebApi\\Ecommerce.ShoppingCard.WebApi.sln",
+  "SelectedNode": "\\Ecommerce.ShoppingCard.WebApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
