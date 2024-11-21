@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Ecommerce.Orders.WebAPI",
     "\\Ecommerce.Product.WebApi",
     "\\Ecommerce.ShoppingCard.WebApi"
   ],
-  "SelectedNode": "\\Ecommerce.ShoppingCard.WebApi\\Program.cs",
+  "SelectedNode": "\\Ecommerce.Orders.WebAPI\\Ecommerce.Orders.WebAPI.sln",
   "PreviewInSolutionExplorer": false
 }
