@@ -8,13 +8,15 @@ namespace Ecommerce.ShoppingCard.WebApi.Repository.Abstract
 
         #region get
 
-        Task<OperationResult> GetAllShoppingCards(CancellationToken cancellation);
+        Task<OperationResult> GetAllShoppingCards(IConfiguration configuration,CancellationToken cancellation);
 
         #endregion
 
         #region post
 
         Task<OperationResult> CreateShoppingCards(CreateShoppingCardDto shoppingCardDto,CancellationToken cancellation);
+
+        Task<OperationResult> CreateOrder(IConfiguration configuration,CancellationToken cancellation);
 
         #endregion
     }

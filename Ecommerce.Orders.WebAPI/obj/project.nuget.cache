@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qdH1fGRqzACPN3EaGHHvYJA4R5TRMlMCF75vpItFt1yzyRoSr7CrXU0sFmD9z8zaMEV7g9m8NrsceB5CXmwK7A==",
+  "dgSpecHash": "VGPXPyNdu2U4BLvjAk0r6QvSQytHZHeooy+dCUwsbC6vwRN5QSc3cROXR09DDWarhpPgl8u/0EJUDu22IKmkxw==",
   "success": true,
   "projectFilePath": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Orders.WebAPI\\Ecommerce.Orders.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\akrem\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\akrem\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
     "C:\\Users\\akrem\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\akrem\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512",
     "C:\\Users\\akrem\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\akrem\\.nuget\\packages\\mongodb.bson\\3.0.0\\mongodb.bson.3.0.0.nupkg.sha512",
     "C:\\Users\\akrem\\.nuget\\packages\\mongodb.driver\\3.0.0\\mongodb.driver.3.0.0.nupkg.sha512",

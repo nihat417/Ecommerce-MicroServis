@@ -11,9 +11,9 @@ namespace Ecommerce.ShoppingCard.WebApi.Controllers
     {
 
         [HttpGet("GetAllShoppingCards")]
-        public async Task<IActionResult> GetAllShoppingCards(CancellationToken cancellationToken)
+        public async Task<IActionResult> GetAllShoppingCards(IConfiguration configuration,CancellationToken cancellationToken)
         {
-            var shoppingCardss = await shoppingCards.GetAllShoppingCards(cancellationToken);
+            var shoppingCardss = await shoppingCards.GetAllShoppingCards(configuration,cancellationToken);
             if (shoppingCards == null) return NotFound();
             return Ok(shoppingCardss);
         }
@@ -24,6 +24,14 @@ namespace Ecommerce.ShoppingCard.WebApi.Controllers
         {
             var result = await shoppingCards.CreateShoppingCards(createShoppingCardDto, cancellationToken);
             if(result.Success) return Ok(result);
+            else return BadRequest(result);
+        }
+
+        [HttpPost("CreateOrder")]
+        public async Task<IActionResult> CreateOrders(IConfiguration configuration,CancellationToken cancellationToken)
+        {
+            var result = await shoppingCards.CreateOrder(configuration,cancellationToken);
+            if (result.Success) return Ok(result);
             else return BadRequest(result);
         }
     }

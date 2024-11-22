@@ -5,6 +5,11 @@ using Ecommerce.ShoppingCard.WebApi.Models;
 using Ecommerce.ShoppingCard.WebApi.Repository.Abstract;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading;
 
 namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
 {
@@ -12,13 +17,13 @@ namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
     {
         #region get
 
-        public async Task<OperationResult> GetAllShoppingCards(CancellationToken cancellationToken)
+        public async Task<OperationResult> GetAllShoppingCards(IConfiguration configuration,CancellationToken cancellationToken)
         {
             List<ShoppingCardes> shoppingCards = await dbContext.shoppingCards.ToListAsync(cancellationToken);
+            HttpClient httpclient = new HttpClient();
 
-            HttpClient client = new HttpClient();
-
-            var message = await client.GetAsync("http://products:8080/api/Product/GetAllProducts");
+            string productsEndpoint = $"http://{configuration.GetSection("HttpRequest:Products").Value}/api/Product/GetAllProducts";
+            var message = await httpclient.GetAsync(productsEndpoint);
 
             Result<List<ProductDto>> products = new();
 
@@ -65,7 +70,7 @@ namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
 
         #region Post
 
-        async Task<OperationResult> IShoppingCards.CreateShoppingCards(CreateShoppingCardDto shoppingCardDto, CancellationToken cancellation)
+        public async Task<OperationResult> CreateShoppingCards(CreateShoppingCardDto shoppingCardDto, CancellationToken cancellation)
         {
             ShoppingCardes shoppingCard = new()
             {
@@ -81,6 +86,66 @@ namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
                 Success = true,
                 Data = shoppingCard,
                 Message = "shopping card created"
+            };
+        }
+
+        public async Task<OperationResult> CreateOrder(IConfiguration configuration, CancellationToken cancellationToken)
+        {
+            List<ShoppingCardes> shoppingCards = await dbContext.shoppingCards.ToListAsync(cancellationToken);
+            HttpClient httpclient = new HttpClient();
+
+            string productsEndpoint = $"http://{configuration.GetSection("HttpRequest:Products").Value}/api/Product/GetAllProducts";
+            var message = await httpclient.GetAsync(productsEndpoint);
+
+            Result<List<ProductDto>> products = new();
+
+            if (!message.IsSuccessStatusCode)
+            {
+                return new OperationResult
+                {
+                    Success = false,
+                    Message = "Failed to retrieve products from external service."
+                };
+            }
+
+            products = await message.Content.ReadFromJsonAsync<Result<List<ProductDto>>>(cancellationToken);
+
+            List<CreateOrderDto> response = shoppingCards.Select(s => new CreateOrderDto()
+            {
+                ProductId = s.ProductId,
+                Quantity = s.Quantity,
+                Price = products!.Data!.First(p => p.Id == s.ProductId).Price,
+            }).ToList();
+
+            string ordersEndpoint = $"http://{configuration.GetSection("HttpRequest:Orders").Value}/api/Order/getAllOrder";
+            string stringjson = JsonSerializer.Serialize(response);
+
+            var content = new StringContent(stringjson,Encoding.UTF8,"application/json"); 
+            var orderMessage = await httpclient.PostAsync(ordersEndpoint, content);
+
+            if(orderMessage.IsSuccessStatusCode)
+            {
+                dbContext.RemoveRange(shoppingCards);
+                await dbContext.SaveChangesAsync(cancellationToken);
+            }
+
+            if (products == null)
+            {
+                return new OperationResult
+                {
+                    Success = false,
+                    Message = "Failed to parse products from external service."
+                };
+            }
+
+            return new OperationResult
+            {
+                Success = true,
+                Data = new
+                {
+                    Products = response
+                },
+                Message = "Order created"
             };
         }
 
