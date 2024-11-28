@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "rKsh9d/I157CtNDZzhGTx6tkX35E1IJh/R1JvY2KY84=",
+  "Source": "Ecommerce.Gateway.YARP",
+  "BasePath": "_content/Ecommerce.Gateway.YARP",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

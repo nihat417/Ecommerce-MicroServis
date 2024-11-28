@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "xU6mX1awrWkHlwv1Ta6FeGSfm/hVyW942ghsmLv+lXxzGACD7xFiDu3yfk+Q19jxI7FFQ2l2uyevp+SnP71Saw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\Ecommerce.Gateway.YARP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\akrem\\.nuget\\packages\\system.io.hashing\\8.0.0\\system.io.hashing.8.0.0.nupkg.sha512",
+    "C:\\Users\\akrem\\.nuget\\packages\\yarp.reverseproxy\\2.2.0\\yarp.reverseproxy.2.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}

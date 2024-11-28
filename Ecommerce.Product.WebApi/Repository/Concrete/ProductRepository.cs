@@ -99,7 +99,7 @@ namespace Ecommerce.Products.WebApi.Repository.Concrete
                 if (product is not null)
                     product.Stock -= item.Quantity;
             }
-            await dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync(cancellationToken);
 
             return new OperationResult { Success = true, Message = "successfully changed", ErrorMessage = null };
         }
