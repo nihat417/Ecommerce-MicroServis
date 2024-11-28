@@ -91,6 +91,19 @@ namespace Ecommerce.Products.WebApi.Repository.Concrete
             return new OperationResult { Success = true, Message = "Successfully created 100 products", ErrorMessage = null };
         }
 
+        public async Task<OperationResult> ChangeStockProduct(List<ChangeProductStockDto> productStockDtos, CancellationToken cancellationToken)
+        {
+            foreach (var item in productStockDtos)
+            {
+                Product? product = await dbContext.Products.FindAsync(item.ProducId, cancellationToken);
+                if (product is not null)
+                    product.Stock -= item.Quantity;
+            }
+            await dbContext.SaveChangesAsync();
+
+            return new OperationResult { Success = true, Message = "successfully changed", ErrorMessage = null };
+        }
+
 
         #endregion
     }

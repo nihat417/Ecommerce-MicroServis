@@ -15,6 +15,8 @@ namespace Ecommerce.Products.WebApi.Repository.Abstract
 
         Task<OperationResult> CreateProduct(CreateProductDto productDto, CancellationToken cancellationToken);
 
+        Task<OperationResult> ChangeStockProduct(List<ChangeProductStockDto> productStockDtos, CancellationToken cancellationToken);
+
         Task<OperationResult> AddFakeDatas();
 
         #endregion

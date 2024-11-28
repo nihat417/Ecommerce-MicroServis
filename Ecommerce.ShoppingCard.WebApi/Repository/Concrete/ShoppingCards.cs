@@ -122,6 +122,16 @@ namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
 
             if(orderMessage.IsSuccessStatusCode)
             {
+                List<ChangeProductStockDto> changeProductStockDtos = shoppingCards
+                    .Select(s => new ChangeProductStockDto(s.ProductId,s.Quantity)).ToList();
+
+                productsEndpoint = $"http://{configuration.GetSection("HttpRequest:Products").Value}/api/Product/ChangeProductStock";
+
+                string productStringJson = JsonSerializer.Serialize(changeProductStockDtos);
+                var productsContent = new StringContent(productStringJson, Encoding.UTF8, "application/json");
+
+                await httpclient.PostAsync(productsEndpoint, productsContent);
+
                 dbContext.RemoveRange(shoppingCards);
                 await dbContext.SaveChangesAsync(cancellationToken);
             }

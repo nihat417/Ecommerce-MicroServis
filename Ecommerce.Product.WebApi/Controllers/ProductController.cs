@@ -31,5 +31,13 @@ namespace Ecommerce.Products.WebApi.Controllers
             if (result.Success) return Ok(result);
             return BadRequest(result);
         }
+
+        [HttpPost("ChangeProductStock")]
+        public async Task<IActionResult> ChangeStockProduct(List<ChangeProductStockDto> productDto,CancellationToken cancellationToken)
+        {
+            var result = await productRepository.ChangeStockProduct(productDto, cancellationToken);
+            if (result.Success) return Ok(result);
+            return BadRequest(result);
+        }
     }
 }
