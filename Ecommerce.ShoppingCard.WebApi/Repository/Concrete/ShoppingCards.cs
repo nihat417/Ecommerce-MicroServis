@@ -3,13 +3,9 @@ using Ecommerce.ShoppingCard.WebApi.Dtos;
 using Ecommerce.ShoppingCard.WebApi.Entities;
 using Ecommerce.ShoppingCard.WebApi.Models;
 using Ecommerce.ShoppingCard.WebApi.Repository.Abstract;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using System.Threading;
 
 namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
 {
@@ -36,7 +32,8 @@ namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
                 };
             }
 
-            products = await message.Content.ReadFromJsonAsync<Result<List<ProductDto>>>(cancellationToken);
+            if(message.IsSuccessStatusCode) 
+                products = await message.Content.ReadFromJsonAsync<Result<List<ProductDto>>>(cancellationToken);
 
             List<ShoppingCardDto> response = shoppingCards.Select(s => new ShoppingCardDto()
             {
@@ -107,8 +104,8 @@ namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
                     Message = "Failed to retrieve products from external service."
                 };
             }
-
-            products = await message.Content.ReadFromJsonAsync<Result<List<ProductDto>>>(cancellationToken);
+            if(message.IsSuccessStatusCode) 
+               products = await message.Content.ReadFromJsonAsync<Result<List<ProductDto>>>(cancellationToken);
 
             List<CreateOrderDto> response = shoppingCards.Select(s => new CreateOrderDto()
             {
@@ -117,7 +114,7 @@ namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
                 Price = products!.Data!.First(p => p.Id == s.ProductId).Price,
             }).ToList();
 
-            string ordersEndpoint = $"http://{configuration.GetSection("HttpRequest:Orders").Value}/api/Order/getAllOrder";
+            string ordersEndpoint = $"http://{configuration.GetSection("HttpRequest:Orders").Value}/api/Order/createOrder";
             string stringjson = JsonSerializer.Serialize(response);
 
             var content = new StringContent(stringjson,Encoding.UTF8,"application/json"); 
@@ -129,14 +126,14 @@ namespace Ecommerce.ShoppingCard.WebApi.Repository.Concrete
                 await dbContext.SaveChangesAsync(cancellationToken);
             }
 
-            if (products == null)
+            /*if (products == null)
             {
                 return new OperationResult
                 {
                     Success = false,
                     Message = "Failed to parse products from external service."
                 };
-            }
+            }*/
 
             return new OperationResult
             {

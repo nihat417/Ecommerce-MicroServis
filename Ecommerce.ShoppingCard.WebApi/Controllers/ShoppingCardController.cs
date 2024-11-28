@@ -27,12 +27,14 @@ namespace Ecommerce.ShoppingCard.WebApi.Controllers
             else return BadRequest(result);
         }
 
-        [HttpPost("CreateOrder")]
+        [HttpGet("CreateOrder")]
         public async Task<IActionResult> CreateOrders(IConfiguration configuration,CancellationToken cancellationToken)
         {
             var result = await shoppingCards.CreateOrder(configuration,cancellationToken);
             if (result.Success) return Ok(result);
             else return BadRequest(result);
         }
+
+
     }
 }
