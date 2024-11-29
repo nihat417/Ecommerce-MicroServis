@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{1C411E37-DF04-44D1-9262-9AA7FD6E24A3}|Ecommerce.Gateway.YARP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1C411E37-DF04-44D1-9262-9AA7FD6E24A3}|Ecommerce.Gateway.YARP.csproj|c:\\users\\akrem\\source\\repos\\ecommerce.microservis\\ecommerce.gateway.yarp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C411E37-DF04-44D1-9262-9AA7FD6E24A3}|Ecommerce.Gateway.YARP.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1C411E37-DF04-44D1-9262-9AA7FD6E24A3}|Ecommerce.Gateway.YARP.csproj|c:\\users\\akrem\\source\\repos\\ecommerce.microservis\\ecommerce.gateway.yarp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1C411E37-DF04-44D1-9262-9AA7FD6E24A3}|Ecommerce.Gateway.YARP.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C411E37-DF04-44D1-9262-9AA7FD6E24A3}|Ecommerce.Gateway.YARP.csproj|c:\\users\\akrem\\source\\repos\\ecommerce.microservis\\ecommerce.gateway.yarp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1C411E37-DF04-44D1-9262-9AA7FD6E24A3}|Ecommerce.Gateway.YARP.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1C411E37-DF04-44D1-9262-9AA7FD6E24A3}|Ecommerce.Gateway.YARP.csproj|c:\\users\\akrem\\source\\repos\\ecommerce.microservis\\ecommerce.gateway.yarp\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C411E37-DF04-44D1-9262-9AA7FD6E24A3}|Ecommerce.Gateway.YARP.csproj|solutionrelative:context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,32 +26,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-28T15:18:27.975Z",
+              "DocumentIndex": 3,
+              "Title": "AppdbContext.cs",
+              "DocumentMoniker": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\Context\\AppdbContext.cs",
+              "RelativeDocumentMoniker": "Context\\AppdbContext.cs",
+              "ToolTip": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\Context\\AppdbContext.cs",
+              "RelativeToolTip": "Context\\AppdbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T09:40:04.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-29T09:30:45.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
               "ToolTip": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\appsettings.Development.json",
               "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAYwAgAAAAPAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-28T15:13:27.919Z",
+              "WhenOpened": "2024-11-29T09:28:47.505Z",
               "EditorCaption": ""
             },
             {
@@ -58,9 +75,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\akrem\\source\\repos\\Ecommerce.MicroServis\\Ecommerce.Gateway.YARP\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAWAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T15:12:22.372Z",
+              "WhenOpened": "2024-11-29T09:26:24.548Z",
               "EditorCaption": ""
             }
           ]

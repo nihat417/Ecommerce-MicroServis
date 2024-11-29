@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ecommerce.Gateway.YARP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+515e1630d6b4c05fcc1f64861e8faa8da9b2766a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76ef2c28f9cd55e1e0507837d723a4ac8451656f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ecommerce.Gateway.YARP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ecommerce.Gateway.YARP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
